@@ -6,6 +6,7 @@ const testURL = "https://github.com/KartikM123/MusicTree/blob/master/main.cpp"
 const testUser = "TEST"
 
 const URLHeader = "https://github.com/";
+const URLHeaderunsafe = "http://github.com/";
 const blobHeader ="/blob";
 const gistitPrefix = "http://gist-it.appspot.com/github/";
 /* GET users listing. */
@@ -23,6 +24,7 @@ function formatURL(gitURL) {
 
     //clean URL
     gitURL = gitURL.replace(URLHeader, '');
+    gitURL = gitURL.replace(URLHeaderunsafe, '');
 
     let gitContents = gitURL.split('/');
     let userName = gitContents[0];
