@@ -5,9 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-// var connectionRouter = require('./routes/connectionStatus');
+var connectionRouter = require('./routes/connectionStatus');
 var getStylesRouter = require("./routes/getStyles");
-// var gistFormatRouter = require("./routes/gistFormat");
+var gistFormatRouter = require("./routes/gistFormat");
+var gitProvider = require("./routes/gitHubProvider");
+var gistProvider = require("./routes/gistProvider");
 
 var app = express();
 
@@ -22,9 +24,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-//app.use('/connectionStatus', connectionRouter);
+app.use('/connectionStatus', connectionRouter);
 app.use("/getStyles", getStylesRouter);
-// app.use("/gistFormat", gistFormatRouter);
+app.use("/github", gitProvider);
+app.use("/gist", gistProvider);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
