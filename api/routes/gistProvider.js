@@ -14,10 +14,9 @@ router.get('/', function(req, res, next) {
 });
 
 function parseURL(gist, res){
-    let id = getGistId(gist);
 
     var authOptions = {
-        url: githubAPIHeader + id,
+        url: githubAPIHeader + gist,
         headers: {
             "User-Agent": "digist"
         }
@@ -34,15 +33,5 @@ function parseURL(gist, res){
             res.send(error)
         }
     })
-
-}
-
-function getGistId(gist){
-    //convert from http://<url>/{id} ==> parse for id
-    let comp = gist.split('/')
-    console.log(comp);
-    console.log(comp[comp.length-1])
-    let id = (comp[comp.length-1].split('.')[comp[comp.length-1].split('.').length-1])
-    return id;
 
 }
