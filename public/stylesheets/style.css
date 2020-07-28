@@ -22,10 +22,18 @@
 .snippet-header {
     background-color: var(--tab-background-color);
 }
+/* Hides the tab bar when the snippet is collapsed */
+.snippet-header--collapsed {
+    display: none;
+}
 .snippet-tab {
     padding: 8px 10px;
     background: var(--tab-inactive-color);
     color: var(--editor-foreground);
+}
+/* Hides the line numbers when the snippet is collapsed */
+.snippet-line-number--collapsed {
+    display: none;
 }
 .snippet-file-data {
     font-family: monospace;
