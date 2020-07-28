@@ -1,0 +1,81 @@
+:root {
+    --editor-background: #1E1E1E;
+    --editor-foreground: #D4D4D4;
+    --tab-background-color: #252526;
+    --tab-inactive-color: #2D2D2D;
+    --meta-background: #007ACC;
+    --meta-background-selected: #1F8AD2;
+    --meta-foreground: #ffffff;
+    --editor-selectionHighlightBackground: #ADD6FF26;
+}
+.snippet-tab,
+.snippet-action {
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+}
+.snippet {
+    background-color: var(--editor-background);
+    color: var(--editor-foreground);
+    font-size: 1.2rem;
+}
+.snippet-header {
+    background-color: var(--tab-background-color);
+}
+/* Hides the tab bar when the snippet is collapsed */
+.snippet-header--collapsed {
+    display: none;
+}
+
+.snippet-tab {
+    background: var(--tab-inactive-color);
+    color: var(--editor-foreground); 
+    padding: 8px 16px 8px 10px;
+}
+
+.file-icon{
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Hides the line numbers when the snippet is collapsed */
+.snippet-line-number--collapsed {
+    display: none;
+}
+.snippet-file-data {
+    font-family: monospace;
+}
+
+.snippet-data{
+    padding: 10px 20px;
+}
+
+.snippet-meta {
+    background-color: var(--meta-background);
+    color: var(--meta-foreground);
+    display: flex;
+    justify-content: space-between;
+}
+.snippet-action {
+    text-decoration: none;
+    background-color: var(--meta-background);
+    color: inherit;
+    padding: 2px 10px;
+}
+.snippet-action:hover {
+    background-color: var(--meta-background-selected);
+}
+
+.snippet-line-number {
+    padding-right: 20px;
+}
+
+.selected-tab{
+    background: var(--editor-background);
+    font-weight: bolder;
+}
+
+.hidden-snippet {
+    display: none;
+}

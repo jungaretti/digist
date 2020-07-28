@@ -1,0 +1,70 @@
+<!-- TODO: This is a demo page and should be removed eventually -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digist Demo</title>
+
+    <link href="embedded/stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class='snippet'>
+        <div class="snippet-header">
+            <div class="snippet-tabs">
+                <button class="snippet-tab selected-tab" data-filename="main.ts">
+                    <image class="file-icon" src='demo-icon.svg'> </image>
+                    <span> main.ts </span>
+                </button>
+                <button class="snippet-tab" data-filename="Things.ts">
+                    <image class="file-icon" src='demo-icon.svg'> </image>
+                    <span>Thing.ts</span>
+                </button>
+            </div>
+        </div>
+        <div class="snippet-data">
+            <div class='snippet-file-data' data-filename="main.ts">
+                <table>
+                    <tr>
+                        <td class="snippet-line-number">1</td>
+                        <td>fn main() {</td>
+                    </tr>
+                    <tr>
+                        <td class="snippet-line-number">2</td>
+                        <td>&emsp;println!("Hello world!");</td>
+                    </tr>
+                    <tr>
+                        <td class="snippet-line-number">3</td>
+                        <td>}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class='snippet-file-data hidden-snippet' data-filename="Things.ts">
+                <table>
+                    <tr>
+                        <td class="snippet-line-number">1</td>
+                        <td>fn helper() {</td>
+                    </tr>
+                    <tr>
+                        <td class="snippet-line-number">2</td>
+                        <td>&emsp;println!("How are you?");</td>
+                    </tr>
+                    <tr>
+                        <td class="snippet-line-number">3</td>
+                        <td>}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class='snippet-meta'>
+            <button class="snippet-action snippet-collapse-expand" data-expanded="true">Collapse/Expand</button>
+            <button class="snippet-action">Right Button</button>
+        </div>
+    </div>
+    <script src="embedded/scripts/snippet.js"></script>
+</body>
+
+</html>
