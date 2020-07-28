@@ -8,9 +8,10 @@ const router = express.Router();
 router.get('/gist/:gistId/', function(req, res) {
     gist.get(req.params.gistId, function(files) {
         if (typeof(files) == 'string') {
+            // There was an error.
             res.send(files);
         } else {
-            // convert to html and respond
+            // Convert to html and respond.
             const html = files;
             res.send(html);
         }
