@@ -22,9 +22,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/', gistProvider);
+
 app.use('/connectionStatus', connectionRouter);
 app.use("/getStyles", getStylesRouter);
-app.use("/gist", gistProvider);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
