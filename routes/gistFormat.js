@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-module.exports = router;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -9,3 +8,5 @@ router.get('/', function(req, res, next) {
     //when run command, solution will show up
     res.send(solution);
 });
+
+module.exports = router;
