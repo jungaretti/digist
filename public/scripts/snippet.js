@@ -1,5 +1,10 @@
 function tabClickHandler(event) {
-    const newFilename = event.target.dataset.filename;
+
+    //check if either the child of the tab or the tab was clicked
+    let newFilename = (event.target.dataset.filename === undefined) ?
+        event.target.parentElement.dataset.filename :
+        event.target.dataset.filename;
+
     for (button of document.getElementsByClassName('snippet-tab')) {
         if (button.dataset.filename === newFilename) {
             button.classList.add("selected-tab");
