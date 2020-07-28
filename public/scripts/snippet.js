@@ -24,6 +24,9 @@ function collapseExpandToggleHandler(event) {
     for (header of document.getElementsByClassName('snippet-header')) {
         header.classList.toggle("snippet-header--collapsed");
     }
+    for (lineNumber of document.getElementsByClassName('snippet-line-number')) {
+        lineNumber.classList.toggle('snippet-line-number--collapsed');
+    }
     event.target.dataset.expanded = (event.target.dataset.expanded === 'false') ? 'true' : 'false';
 }
 

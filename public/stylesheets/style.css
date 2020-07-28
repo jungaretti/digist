@@ -31,6 +31,10 @@
     background: var(--tab-inactive-color);
     color: var(--editor-foreground);
 }
+/* Hides the line numbers when the snippet is collapsed */
+.snippet-line-number--collapsed {
+    display: none;
+}
 .snippet-file-data {
     font-family: monospace;
 }
