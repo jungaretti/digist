@@ -27,6 +27,9 @@ function collapseExpandToggleHandler(event) {
     for (lineNumber of document.getElementsByClassName('snippet-line-number')) {
         lineNumber.classList.toggle('snippet-line-number--collapsed');
     }
+    for (collapseExpandButton of document.getElementsByClassName('snippet-collapse-expand')) {
+        collapseExpandButton.textContent = (collapseExpandButton.textContent === 'Expand') ? 'Collapse' : 'Expand';
+    }
     event.target.dataset.expanded = (event.target.dataset.expanded === 'false') ? 'true' : 'false';
 }
 
