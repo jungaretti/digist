@@ -19,3 +19,14 @@ function tabClickHandler(event) {
 for (fileButton of document.getElementsByClassName("snippet-tab")) {
     fileButton.addEventListener('click', tabClickHandler);
 }
+
+function collapseExpandToggleHandler(event) {
+    for (header of document.getElementsByClassName('snippet-header')) {
+        header.classList.toggle("snippet-header--collapsed");
+    }
+    event.target.dataset.expanded = (event.target.dataset.expanded === 'false') ? 'true' : 'false';
+}
+
+for (collapseExpandButton of document.getElementsByClassName("snippet-collapse-expand")) {
+    collapseExpandButton.addEventListener('click', collapseExpandToggleHandler);
+}

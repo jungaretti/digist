@@ -22,6 +22,10 @@
 .snippet-header {
     background-color: var(--tab-background-color);
 }
+/* Hides the tab bar when the snippet is collapsed */
+.snippet-header--collapsed {
+    display: none;
+}
 .snippet-tab {
     padding: 8px 10px;
     background: var(--tab-inactive-color);
