@@ -30,6 +30,11 @@
 .snippet-file-data {
     font-family: monospace;
 }
+
+.snippet-data{
+    padding: 10px 0px;
+}
+
 .snippet-meta {
     background-color: var(--meta-background);
     color: var(--meta-foreground);
@@ -48,11 +53,15 @@
 .snippet-action:hover {
     background-color: var(--meta-background-selected);
 }
-/* TODO: Should probably give this a more specific class name */
-.selected{
+
+.snippet-line-number {
+    padding: 0px 20px;
+}
+
+.selected-tab{
     background: var(--editor-background);
 }
-/* TODO: Should probably give this a more specific class name */
-.hidden {
+
+.hidden-snippet {
     display: none;
 }
