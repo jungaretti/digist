@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var connectionRouter = require('./routes/connectionStatus');
 var getStylesRouter = require("./routes/getStyles");
-var gistProvider = require("../routes/gistProvider")
+var gistProvider = require("./routes/gistProvider")
 
 var app = express();
 
@@ -22,9 +22,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/', gistProvider);
+
 app.use('/connectionStatus', connectionRouter);
 app.use("/getStyles", getStylesRouter);
-app.use("/gist", gistProvider);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -43,8 +44,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-const gistId = 'd043ec2246253d7c6bf0398369f81269';
-const files = gist.get(gistId, function(files) {
-  console.log(files);
-});
