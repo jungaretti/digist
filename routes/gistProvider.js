@@ -2,6 +2,7 @@ const express = require('express');
 
 const gist = require('../lib/gist');
 const fs = require('../lib/fileSlice');
+const ic = require('../lib/icon');
 
 const router = express.Router();
 
@@ -53,6 +54,12 @@ router.get('/gist/:gistId/', function(req, res) {
                 return;
             }
 
+            // Add the icon URL very optimistically.
+            Object.keys(files).forEach(function(key) {
+                files[key].icon = ic.map(files[key].language);
+            });
+
+            // Create the fileSlice.
             const userId = gistJson.owner.login;
             const url = composeGistUrl(userId, gistId);
             const fileSlice = new fs.fileSlice(file, start, stop);
