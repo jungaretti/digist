@@ -13,7 +13,8 @@ div(class='snippet')
                     each line in file.content.split('\n')
                         tr
                             td(class='snippet-code-line-number')= lineNumber++
-                            td(class = 'snippet-code-line-data')= line
+                            td(class = 'snippet-code-line-data') 
+                                pre(class='code')= line
     div(class='snippet-footer')
         button(class='snippet-footer-action snippet-collapse-expand')= expanded ? 'Expand' : 'Collapse'
         button(class = 'snippet-footer-action') View on GitHub

@@ -70,3 +70,7 @@
 .snippet-footer-action:hover {
     background-color: var(--meta-background-selected);
 }
+
+pre{
+    margin: 0px;
+}
