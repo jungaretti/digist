@@ -1,22 +1,22 @@
 function tabClickHandler(event) {
 
     //check if either the child of the tab or the tab was clicked
-    let newFilename = (event.target.dataset.filename === undefined) ?
-        event.target.parentElement.dataset.filename :
-        event.target.dataset.filename;
+    let newFilename = (event.target.dataset.file === undefined) ?
+        event.target.parentElement.dataset.file :
+        event.target.dataset.file;
 
     for (button of document.getElementsByClassName('snippet-tab')) {
-        if (button.dataset.filename === newFilename) {
-            button.classList.add("selected-tab");
+        if (button.dataset.file === newFilename) {
+            button.classList.add("snippet-tab--active");
         } else {
-            button.classList.remove("selected-tab");
+            button.classList.remove("snippet-tab--active");
         }
     }
-    for (data of document.getElementsByClassName('snippet-file-data')) {
-        if (data.dataset.filename === newFilename) {
-            data.classList.remove("hidden-snippet");
+    for (data of document.getElementsByClassName('snippet-code-container')) {
+        if (data.dataset.file === newFilename) {
+            data.classList.remove("snippet-code-container--inactive");
         } else {
-            data.classList.add("hidden-snippet");
+            data.classList.add("snippet-code-container--inactive");
         }
     }
 }
