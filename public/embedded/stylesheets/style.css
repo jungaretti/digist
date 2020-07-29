@@ -9,7 +9,7 @@
     --editor-selectionHighlightBackground: #ADD6FF26;
 }
 .snippet-tab,
-.snippet-action {
+.snippet-footer-action {
     border: none;
     outline: none;
     font-size: 1.2rem;
@@ -55,20 +55,18 @@
 .snippet-line-number--collapsed {
     display: none;
 }
-.snippet-meta {
+.snippet-footer {
     background-color: var(--meta-background);
     color: var(--meta-foreground);
     display: flex;
     justify-content: space-between;
 }
-.snippet-action {
+.snippet-footer-action {
     text-decoration: none;
     background-color: var(--meta-background);
     color: inherit;
     padding: 2px 10px;
 }
-.snippet-action:hover {
+.snippet-footer-action:hover {
     background-color: var(--meta-background-selected);
 }
-
-
