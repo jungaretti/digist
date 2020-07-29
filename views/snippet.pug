@@ -1,0 +1,19 @@
+div(class='snippet')
+    div(class='snippet-header')
+        div(class='snippet-tabs')
+            each file in files
+                button
+                    image(src=file.iconURL)
+                    span= file.name
+    div(class='snippet-data')
+        each file in files
+            div
+                table
+                    - lineNumber = 1;
+                    each line in file.content.split('\n')
+                        tr
+                            td= lineNumber++
+                            td= line
+    div(class='snippet-meta')
+        button= expanded ? 'Expand' : 'Collapse'
+        button View on GitHub
