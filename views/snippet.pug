@@ -3,7 +3,7 @@ div(class='snippet')
         div(class='snippet-tab-container')
             each file in files
                 button(class=(file.name === slice.name) ? 'snippet-tab snippet-tab--active' : 'snippet-tab', data-file=file.name)
-                    img(src=file.iconURL, alt="Coding language icon")
+                    img(src=file.iconURL, alt="Coding language icon", class="snippet-tab-file-icon")
                     span(class='snippet-tab-name')= file.name
     div(class='snippet-data')
         each file in files
@@ -13,7 +13,8 @@ div(class='snippet')
                     each line in file.content.split('\n')
                         tr
                             td(class='snippet-code-line-number')= lineNumber++
-                            td(class='snippet-code-line-data')= line
+                            td(class = 'snippet-code-line-data') 
+                                pre(class='code')= line
     div(class='snippet-footer')
         button(class='snippet-footer-action snippet-collapse-expand')= expanded ? 'Expand' : 'Collapse'
         button(class='snippet-footer-action') View on GitHub
