@@ -27,7 +27,7 @@ router.get('/gist/:gistId/', function(req, res) {
         }
     }
 
-    const file = req.query.fileName;
+    const file = req.query.file;
     if (file === null || file === undefined){
         res.send('Error. File Name must be passed');
     }
