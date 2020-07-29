@@ -5,7 +5,7 @@ const compiledFunction = pug.compileFile('views/snippet.pug');
 
 // Render a set of data
 console.log(compiledFunction({
-    url: "https://www.google.com",
+    url: "https://www.github.com",
     slice: {
         name: 'hello_world.rb'
     },
