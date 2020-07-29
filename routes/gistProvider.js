@@ -1,6 +1,7 @@
 const express = require('express');
 
 const gist = require('../lib/gist');
+const fs = require('../lib/fileSlice');
 
 const router = express.Router();
 
@@ -29,26 +30,35 @@ router.get('/gist/:gistId/', function(req, res) {
 
     const file = req.query.file;
     if (file === null || file === undefined){
-        res.send('Error. File Name must be passed');
+        res.send('Error: Name of file missing.');
+        return;
     }
 
     // Get the gist.
-    gist.get(req.params.gistId, function(files) {
-        if (typeof(files) == 'string') {
-            console.log(req.params.gistId);
+    const gistId = req.params.gistId;
+    gist.get(gistId, function(gistJson) {
+        if (typeof(gistJson) == 'number') {
             // There was an error getting the gist.
-            res.send(files);
+            res.send('Error: Invalid gist ID.');
         } else {
-            //check validity of file
-            if (!checkFileExists(file, files)){
-                res.send("File does not exist in this gist")
+            // Check validity of file.
+            const files = gistJson.files;
+            if (!checkFileExists(file, files)) {
+                res.send('Error: File does not exist in this gist.');
+                return;
             }
 
-            if (!checkSliceInFile(file, files, start, stop)){
-                res.send("Slice does not fit in file range");
+            if (!checkSliceInFile(file, files, start, stop)) {
+                res.send('Error: Slice does not fit in file range.');
+                return;
             }
+
+            const userId = gistJson.owner.login;
+            const url = composeGistUrl(userId, gistId);
+            const fileSlice = new fs.fileSlice(file, start, stop);
+
             // Convert to html and respond.
-            const html = convertToHtmlPlaceHolder(files, start, stop);
+            const html = convertToHtmlPlaceHolder(url, fileSlice, files);
             res.send(html);
         }
     });
@@ -63,10 +73,14 @@ function checkSliceInFile(file, gistInfo, start, stop){
     return ((totalLines > start) && (totalLines > stop));
 }
 
-function convertToHtmlPlaceHolder(files, start, stop) {
+function composeGistUrl(userId, gistId) {
+    return 'https://gist.github.com/' + userId + '/' + gistId + '/';
+}
+
+function convertToHtmlPlaceHolder(url, fileSlice, files) {
     // If start and stop are = 0, do not use them. If they are non-zero, use them.
-    var display = 'start: ' + start + '<br>';
-    display += 'stop: ' + stop + '<br>';
+    var display = 'url: ' + url + '<br>';
+    display += 'fileSlice: ' + fileSlice.file + ', ' + fileSlice.start + ', ' + fileSlice.stop + '<br>';
     display += 'files: ' + '<br>' + JSON.stringify(files, null, 4);
     return display;
 }
