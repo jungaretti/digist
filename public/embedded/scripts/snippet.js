@@ -1,12 +1,12 @@
 function tabClickHandler(event) {
 
     //check if either the child of the tab or the tab was clicked
-    let newFilename = (event.target.dataset.filename === undefined) ?
-        event.target.parentElement.dataset.filename :
-        event.target.dataset.filename;
+    let newFilename = (event.target.dataset.file === undefined) ?
+        event.target.parentElement.dataset.file :
+        event.target.dataset.file;
 
     for (button of document.getElementsByClassName('snippet-tab')) {
-        if (button.dataset.filename === newFilename) {
+        if (button.dataset.file === newFilename) {
             button.classList.add("snippet-tab--active");
         } else {
             button.classList.remove("snippet-tab--active");
