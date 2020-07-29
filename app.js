@@ -6,7 +6,6 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var connectionRouter = require('./routes/connectionStatus');
-var getStylesRouter = require("./routes/getStyles");
 var gistProvider = require("./routes/gistProvider")
 
 var app = express();
@@ -25,7 +24,6 @@ app.use('/', indexRouter);
 app.use('/', gistProvider);
 
 app.use('/connectionStatus', connectionRouter);
-app.use("/getStyles", getStylesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
