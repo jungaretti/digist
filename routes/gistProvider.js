@@ -27,8 +27,8 @@ router.get('/gist/:gistId/', function(req, res) {
         }
     }
 
-    const fileName = req.query.fileName;
-    if (fileName === null || fileName === undefined){
+    const file = req.query.fileName;
+    if (file === null || file === undefined){
         res.send('Error. File Name must be passed');
     }
 
@@ -40,11 +40,11 @@ router.get('/gist/:gistId/', function(req, res) {
             res.send(files);
         } else {
             //check validity of file
-            if (!checkFileExists(fileName, files)){
+            if (!checkFileExists(file, files)){
                 res.send("File does not exist in this gist")
             }
 
-            if (!checkSliceInFile(fileName, files, start, stop)){
+            if (!checkSliceInFile(file, files, start, stop)){
                 res.send("Slice does not fit in file range");
             }
             // Convert to html and respond.
