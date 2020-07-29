@@ -40,18 +40,21 @@
     height: auto;
     vertical-align: middle;
 }
-/* Hides the line numbers when the snippet is collapsed */
-.snippet-line-number--collapsed {
-    display: none;
-}
-.snippet-file-data {
-    font-family: monospace;
-}
-
 .snippet-data{
     padding: 10px 20px;
 }
-
+.snippet-code-container {
+    font-family: monospace;
+}
+.snippet-code-container--inactive {
+    display: none;
+}
+.snippet-code-line-number {
+    padding-right: 20px;
+}
+.snippet-line-number--collapsed {
+    display: none;
+}
 .snippet-meta {
     background-color: var(--meta-background);
     color: var(--meta-foreground);
@@ -68,9 +71,4 @@
     background-color: var(--meta-background-selected);
 }
 
-.snippet-line-number {
-    padding-right: 20px;
-}
-.hidden-snippet {
-    display: none;
-}
+

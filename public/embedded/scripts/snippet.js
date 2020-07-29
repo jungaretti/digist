@@ -12,11 +12,11 @@ function tabClickHandler(event) {
             button.classList.remove("snippet-tab--active");
         }
     }
-    for (data of document.getElementsByClassName('snippet-file-data')) {
-        if (data.dataset.filename === newFilename) {
-            data.classList.remove("hidden-snippet");
+    for (data of document.getElementsByClassName('snippet-code-container')) {
+        if (data.dataset.file === newFilename) {
+            data.classList.remove("snippet-code-container--inactive");
         } else {
-            data.classList.add("hidden-snippet");
+            data.classList.add("snippet-code-container--inactive");
         }
     }
 }
