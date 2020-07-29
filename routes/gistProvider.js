@@ -11,6 +11,7 @@ router.get('/gist/:gistId/', function(req, res) {
     var stop = 0;
 
     const slice = req.query.slice;
+
     if (slice != null) {
         const sliceArray = slice.split(':');
         if (sliceArray.length == 2) {
@@ -27,18 +28,40 @@ router.get('/gist/:gistId/', function(req, res) {
         }
     }
 
+    const fileName = req.query.fileName;
+    if (fileName === null || fileName === undefined){
+        res.send('Error. File Name must be passed');
+    }
+
     // Get the gist.
     gist.get(req.params.gistId, function(files) {
         if (typeof(files) == 'string') {
             // There was an error getting the gist.
             res.send(files);
         } else {
+            //check validity of file
+            if (!checkFileExists(fileName, JSON.parse(files))){
+                res.send("File does not exist in this gist")
+            }
+
+            if (!checkSliceInFile(fileName, JSON.parse(files))){
+                res.send("Slice does not fit in file range");
+            }
             // Convert to html and respond.
             const html = convertToHtmlPlaceHolder(files, start, stop);
             res.send(html);
         }
     });
 });
+
+function checkFileExists(file, gistInfo){
+    return (gistInfo[file] !== undefined);
+}
+
+function checkSliceInFile(file, gistInfo, start, stop){
+    let totalLines = gistInfo[file]["content"].split("\n").length;
+    return (totalLines > start && totalLines > stop);
+}
 
 function convertToHtmlPlaceHolder(files, start, stop) {
     // If start and stop are = 0, do not use them. If they are non-zero, use them.
