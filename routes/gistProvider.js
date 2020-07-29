@@ -11,7 +11,6 @@ router.get('/gist/:gistId/', function(req, res) {
     var stop = 0;
 
     const slice = req.query.slice;
-
     if (slice != null) {
         const sliceArray = slice.split(':');
         if (sliceArray.length == 2) {
