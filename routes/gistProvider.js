@@ -34,6 +34,14 @@ router.get('/gist/:gistId/', function(req, res) {
         return;
     }
 
+    let theme = req.query.theme;
+    if(theme === null){
+        console.log('Theme not applied')
+    } else if (theme !== 'dark' && theme !== 'light'){
+        console.log('Invalid theme');
+        theme = null;
+    }
+
     // Get the gist.
     const gistId = req.params.gistId;
     gist.get(gistId, function(gistJson) {
@@ -58,7 +66,7 @@ router.get('/gist/:gistId/', function(req, res) {
             const fileSlice = new fs.fileSlice(file, start, stop);
 
             // Convert to html and respond.
-            const html = convertToHtmlPlaceHolder(url, fileSlice, files);
+            const html = convertToHtmlPlaceHolder(url, fileSlice, files, theme);
             res.send(html);
         }
     });
@@ -77,10 +85,11 @@ function composeGistUrl(userId, gistId) {
     return 'https://gist.github.com/' + userId + '/' + gistId + '/';
 }
 
-function convertToHtmlPlaceHolder(url, fileSlice, files) {
+function convertToHtmlPlaceHolder(url, fileSlice, files, theme) {
     // If start and stop are = 0, do not use them. If they are non-zero, use them.
     var display = 'url: ' + url + '<br>';
     display += 'fileSlice: ' + fileSlice.file + ', ' + fileSlice.start + ', ' + fileSlice.stop + '<br>';
+    display += !!theme ? 'theme ' + theme + '<br>' : ''; // theme is optional 
     display += 'files: ' + '<br>' + JSON.stringify(files, null, 4);
     return display;
 }
