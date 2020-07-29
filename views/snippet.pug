@@ -18,5 +18,5 @@ div(class='snippet')
                                 pre(class='code')= line
     div(class='snippet-footer')
         button(class='snippet-footer-action snippet-collapse-expand')= expanded ? 'Expand' : 'Collapse'
-        button(class='snippet-footer-action') View on GitHub
+        button(class='snippet-footer-action', onclick="window.location.href='" + url + "';") View on GitHub 
 script(src="https://stdigistdata001.blob.core.windows.net/general/snippet-script.js")

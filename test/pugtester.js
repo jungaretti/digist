@@ -5,6 +5,7 @@ const compiledFunction = pug.compileFile('views/snippet.pug');
 
 // Render a set of data
 console.log(compiledFunction({
+    url: "https://www.google.com",
     slice: {
         name: 'hello_world.rb'
     },
@@ -17,4 +18,4 @@ console.log(compiledFunction({
         content: 'class HelloWorld:\n\n    def __init__(self, name):\n        self.name = name.capitalize()\n       \n    def sayHi(self):\n        print \"Hello \" + self.name + \"!\"\n\nhello = HelloWorld(\"world\")\nhello.sayHi()',
         iconURL: 'https://raw.githubusercontent.com/jesseweed/seti-ui/master/icons/ruby.svg'
     }]
-  }));
+}));
