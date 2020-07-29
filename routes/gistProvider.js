@@ -35,6 +35,7 @@ router.get('/gist/:gistId/', function(req, res) {
     // Get the gist.
     gist.get(req.params.gistId, function(files) {
         if (typeof(files) == 'string') {
+            console.log(req.params.gistId);
             // There was an error getting the gist.
             res.send(files);
         } else {
