@@ -40,11 +40,11 @@ router.get('/gist/:gistId/', function(req, res) {
             res.send(files);
         } else {
             //check validity of file
-            if (!checkFileExists(fileName, JSON.parse(files))){
+            if (!checkFileExists(fileName, files)){
                 res.send("File does not exist in this gist")
             }
 
-            if (!checkSliceInFile(fileName, JSON.parse(files))){
+            if (!checkSliceInFile(fileName, files, start, stop)){
                 res.send("Slice does not fit in file range");
             }
             // Convert to html and respond.
@@ -60,7 +60,7 @@ function checkFileExists(file, gistInfo){
 
 function checkSliceInFile(file, gistInfo, start, stop){
     let totalLines = gistInfo[file]["content"].split("\n").length;
-    return (totalLines > start && totalLines > stop);
+    return ((totalLines > start) && (totalLines > stop));
 }
 
 function convertToHtmlPlaceHolder(files, start, stop) {
