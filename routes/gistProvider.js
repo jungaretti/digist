@@ -27,18 +27,41 @@ router.get('/gist/:gistId/', function(req, res) {
         }
     }
 
+    const file = req.query.file;
+    if (file === null || file === undefined){
+        res.send('Error. File Name must be passed');
+    }
+
     // Get the gist.
     gist.get(req.params.gistId, function(files) {
         if (typeof(files) == 'string') {
+            console.log(req.params.gistId);
             // There was an error getting the gist.
             res.send(files);
         } else {
+            //check validity of file
+            if (!checkFileExists(file, files)){
+                res.send("File does not exist in this gist")
+            }
+
+            if (!checkSliceInFile(file, files, start, stop)){
+                res.send("Slice does not fit in file range");
+            }
             // Convert to html and respond.
             const html = convertToHtmlPlaceHolder(files, start, stop);
             res.send(html);
         }
     });
 });
+
+function checkFileExists(file, gistInfo){
+    return (gistInfo[file] !== undefined);
+}
+
+function checkSliceInFile(file, gistInfo, start, stop){
+    let totalLines = gistInfo[file]["content"].split("\n").length;
+    return ((totalLines > start) && (totalLines > stop));
+}
 
 function convertToHtmlPlaceHolder(files, start, stop) {
     // If start and stop are = 0, do not use them. If they are non-zero, use them.
