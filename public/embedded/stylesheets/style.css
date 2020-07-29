@@ -26,19 +26,20 @@
 .snippet-header--collapsed {
     display: none;
 }
-
 .snippet-tab {
     background: var(--tab-inactive-color);
     color: var(--editor-foreground); 
     padding: 8px 16px 8px 10px;
 }
-
-.file-icon{
+.snippet-tab--active {
+    background: var(--editor-background);
+    font-weight: bolder;
+}
+.snippet-tab-file-icon{
     width: 30px;
     height: auto;
     vertical-align: middle;
 }
-
 /* Hides the line numbers when the snippet is collapsed */
 .snippet-line-number--collapsed {
     display: none;
@@ -70,12 +71,6 @@
 .snippet-line-number {
     padding-right: 20px;
 }
-
-.selected-tab{
-    background: var(--editor-background);
-    font-weight: bolder;
-}
-
 .hidden-snippet {
     display: none;
 }

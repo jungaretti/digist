@@ -7,9 +7,9 @@ function tabClickHandler(event) {
 
     for (button of document.getElementsByClassName('snippet-tab')) {
         if (button.dataset.filename === newFilename) {
-            button.classList.add("selected-tab");
+            button.classList.add("snippet-tab--active");
         } else {
-            button.classList.remove("selected-tab");
+            button.classList.remove("snippet-tab--active");
         }
     }
     for (data of document.getElementsByClassName('snippet-file-data')) {
