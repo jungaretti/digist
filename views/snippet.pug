@@ -2,18 +2,18 @@ div(class='snippet')
     div(class='snippet-header')
         div(class='snippet-tab-container')
             each file in files
-                button(class=(file.name === slice.name) ? 'snippet-tab snippet-tab--active' : 'snippet-tab' data-file=file.name)
-                    image(class ='snippet-tab-file-icon' src=file.iconURL)
-                    span(class = 'snippet-tab-name')= file.name
+                button(class=(file.name === slice.name) ? 'snippet-tab snippet-tab--active' : 'snippet-tab', data-file=file.name)
+                    img(src=file.iconURL, alt="Coding language icon")
+                    span(class='snippet-tab-name')= file.name
     div(class='snippet-data')
         each file in files
-            div(class=(file.name === slice.name) ? 'snippet-code-container' : 'snippet-code-container snippet-code-container--inactive' data-file=file.name)
+            div(class=(file.name === slice.name) ? 'snippet-code-container' : 'snippet-code-container snippet-code-container--inactive', data-file=file.name)
                 table
                     - lineNumber = 1;
                     each line in file.content.split('\n')
                         tr
                             td(class='snippet-code-line-number')= lineNumber++
-                            td(class = 'snippet-code-line-data')= line
+                            td(class='snippet-code-line-data')= line
     div(class='snippet-footer')
         button(class='snippet-footer-action snippet-collapse-expand')= expanded ? 'Expand' : 'Collapse'
-        button(class = 'snippet-footer-action') View on GitHub
+        button(class='snippet-footer-action') View on GitHub
