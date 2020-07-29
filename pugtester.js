@@ -18,4 +18,3 @@ console.log(compiledFunction({
         iconURL: 'https://raw.githubusercontent.com/jesseweed/seti-ui/master/icons/ruby.svg'
     }]
   }));
-  
