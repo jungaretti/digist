@@ -2,8 +2,8 @@ doctype html
 html
   head
     title Digist Demo
-    link(rel="stylesheet", href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/vs2015.min.css")
-    link(rel="stylesheet", href="https://stdigistdata001.blob.core.windows.net/general/snippet-style.css")
+    link(rel="stylesheet", href=(theme === 'light') ? "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/vs.min.css" : "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/vs2015.min.css")
+    link(rel="stylesheet", href=(theme === 'light') ? "https://stdigistdata001.blob.core.windows.net/general/snippet-style-light.css" : "https://stdigistdata001.blob.core.windows.net/general/snippet-style-dark.css")
   body
     div(class='snippet')
         div(class='snippet-header')
@@ -20,7 +20,7 @@ html
                         each line in file.content.split('\n')
                             tr
                                 td(class='snippet-code-line-number')= lineNumber++
-                                td(class = 'snippet-code-line-data')
+                                td(class='snippet-code-line-data')
                                     pre
                                         code=line
         div(class='snippet-footer')
