@@ -1,3 +1,4 @@
+const pug = require('pug');
 const express = require('express');
 
 const gist = require('../lib/gist');
@@ -65,7 +66,7 @@ router.get('/gist/:gistId/', function(req, res) {
             const fileSlice = new fs.fileSlice(file, start, stop);
 
             // Convert to html and respond.
-            const html = convertToHtmlPlaceHolder(url, fileSlice, files);
+            const html = convertToHTML(url, fileSlice, files);
             res.send(html);
         }
     });
@@ -84,12 +85,14 @@ function composeGistUrl(userId, gistId) {
     return 'https://gist.github.com/' + userId + '/' + gistId + '/';
 }
 
-function convertToHtmlPlaceHolder(url, fileSlice, files) {
-    // If start and stop are = 0, do not use them. If they are non-zero, use them.
-    var display = 'url: ' + url + '<br>';
-    display += 'fileSlice: ' + fileSlice.file + ', ' + fileSlice.start + ', ' + fileSlice.stop + '<br>';
-    display += 'files: ' + '<br>' + JSON.stringify(files, null, 4);
-    return display;
+function convertToHTML(url, slice, files) {
+    const compiledFunction = pug.compileFile('views/snippet.pug');
+    const compiledHTML = compiledFunction({
+        url: url,
+        slice: slice,
+        files: files,
+    });
+    return compiledHTML;
 }
 
 module.exports = router;
