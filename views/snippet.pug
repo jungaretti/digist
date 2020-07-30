@@ -1,8 +1,5 @@
-link(rel="stylesheet",
-      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/vs2015.min.css")
+link(rel="stylesheet", href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/vs2015.min.css")
 link(rel="stylesheet", href="https://stdigistdata001.blob.core.windows.net/general/snippet-style.css")
-script(src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js")
-script="hljs.initHighlightingOnLoad();"
 div(class='snippet')
     div(class='snippet-header')
         div(class='snippet-tab-container')
@@ -24,4 +21,6 @@ div(class='snippet')
     div(class='snippet-footer')
         button(class='snippet-footer-action snippet-collapse-expand')= expanded ? 'Expand' : 'Collapse'
         button(class='snippet-footer-action', onclick="window.location.href='" + url + "';") View on GitHub 
+script(src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js")
+script hljs.initHighlightingOnLoad();
 script(src="https://stdigistdata001.blob.core.windows.net/general/snippet-script.js")
