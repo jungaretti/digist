@@ -86,11 +86,13 @@ function composeGistUrl(userId, gistId) {
 }
 
 function convertToHTML(url, slice, files) {
-    // If start and stop are = 0, do not use them. If they are non-zero, use them.
-    var display = 'url: ' + url + '<br>';
-    display += 'fileSlice: ' + slice.file + ', ' + slice.start + ', ' + slice.stop + '<br>';
-    display += 'files: ' + '<br>' + JSON.stringify(files, null, 4);
-    return display;
+    const compiledFunction = pug.compileFile('views/snippet.pug');
+    const compiledHTML = compiledFunction({
+        url: url,
+        slice: slice,
+        files: files,
+    });
+    return compiledHTML;
 }
 
 module.exports = router;
