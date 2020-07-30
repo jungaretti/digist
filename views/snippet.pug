@@ -10,7 +10,7 @@ html
             div(class='snippet-tab-container')
                 each file in files
                     button(class=(file.filename === slice.file) ? 'snippet-tab snippet-tab--active' : 'snippet-tab', data-file=file.filename)
-                        img(src=file.icon, alt="Coding language icon", class="snippet-tab-file-icon")
+                        img(src=file.icon, onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/jesseweed/seti-ui/master/icons/html.svg'", alt="Coding language icon", class="snippet-tab-file-icon")
                         span(class='snippet-tab-name')= file.filename
         div(class='snippet-data')
             each file in files
