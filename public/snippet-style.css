@@ -60,9 +60,7 @@ pre, .hljs {
 .snippet-line-number--collapsed {
     display: none;
 }
-.snippet-code-line-data {
-    color: var(--editor-foreground);
-}
+
 .snippet-footer {
     background-color: var(--meta-background);
     color: var(--meta-foreground);
