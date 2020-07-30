@@ -8,7 +8,7 @@
     --meta-foreground: #ffffff;
     --editor-selectionHighlightBackground: #ADD6FF26;
 }
-pre {
+pre, .hljs {
     margin: 0px;
     padding: 0px;
 }
@@ -60,9 +60,7 @@ pre {
 .snippet-line-number--collapsed {
     display: none;
 }
-.snippet-code-line-data {
-    color: var(--editor-foreground);
-}
+
 .snippet-footer {
     background-color: var(--meta-background);
     color: var(--meta-foreground);
