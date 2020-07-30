@@ -1,3 +1,4 @@
+const pug = require('pug');
 const express = require('express');
 
 const gist = require('../lib/gist');
