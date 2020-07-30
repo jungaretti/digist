@@ -38,7 +38,8 @@ router.get('/gist/:gistId/', function(req, res) {
     if(theme === null){
         console.log('Theme not applied')
     } else if (theme !== 'dark' && theme !== 'light'){
-        res.send('Invalid theme');
+        res.send('Error: Invalid theme.');
+        return;
     }
 
     // Get the gist.
