@@ -8,7 +8,7 @@
     --meta-foreground: #ffffff;
     --editor-selectionHighlightBackground: #ADD6FF26;
 }
-pre {
+pre, .hljs {
     margin: 0px;
     padding: 0px;
 }
