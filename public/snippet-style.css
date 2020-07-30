@@ -71,6 +71,8 @@
     background-color: var(--meta-background-selected);
 }
 
-pre{
+pre, .hljs{
     margin: 0px;
+    padding: 0px;
 }
+
