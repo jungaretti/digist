@@ -31,15 +31,15 @@ router.get('/gist/:gistId/', function(req, res) {
     }
 
     const file = req.query.file;
-    if (file === null || file === undefined){
+    if (file === null || file === undefined) {
         res.send('Error: Name of file missing.');
         return;
     }
 
     const theme = req.query.theme;
-    if(theme === null){
+    if (theme === null) {
         console.log('Theme not applied')
-    } else if (theme !== 'dark' && theme !== 'light'){
+    } else if (theme !== 'dark' && theme !== 'light') {
         res.send('Error: Invalid theme.');
         return;
     }
@@ -75,8 +75,7 @@ router.get('/gist/:gistId/', function(req, res) {
 
             // Convert to html and respond.
             const html = convertToHTML(url, fileSlice, files);
-
-          res.send(html);
+            res.send(html);
         }
     });
 });
