@@ -8,6 +8,10 @@
     --meta-foreground: #ffffff;
     --editor-selectionHighlightBackground: #ADD6FF26;
 }
+pre, .hljs {
+    margin: 0px;
+    padding: 0px;
+}
 .snippet-tab,
 .snippet-footer-action {
     border: none;
@@ -51,10 +55,12 @@
 }
 .snippet-code-line-number {
     padding-right: 20px;
+    color: var(--editor-foreground);
 }
 .snippet-line-number--collapsed {
     display: none;
 }
+
 .snippet-footer {
     background-color: var(--meta-background);
     color: var(--meta-foreground);
@@ -69,8 +75,4 @@
 }
 .snippet-footer-action:hover {
     background-color: var(--meta-background-selected);
-}
-
-pre{
-    margin: 0px;
 }

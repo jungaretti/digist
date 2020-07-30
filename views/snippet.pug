@@ -1,22 +1,31 @@
-link(rel="stylesheet", href="https://stdigistdata001.blob.core.windows.net/general/snippet-style.css")
-div(class='snippet')
-    div(class='snippet-header')
-        div(class='snippet-tab-container')
+doctype html
+html
+  head
+    title Digist Demo
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/vs2015.min.css")
+    link(rel="stylesheet", href="https://stdigistdata001.blob.core.windows.net/general/snippet-style.css")
+  body
+    div(class='snippet')
+        div(class='snippet-header')
+            div(class='snippet-tab-container')
+                each file in files
+                    button(class=(file.filename === slice.file) ? 'snippet-tab snippet-tab--active' : 'snippet-tab', data-file=file.filename)
+                        img(src=file.icon, alt="Coding language icon", class="snippet-tab-file-icon")
+                        span(class='snippet-tab-name')= file.filename
+        div(class='snippet-data')
             each file in files
-                button(class=(file.name === slice.name) ? 'snippet-tab snippet-tab--active' : 'snippet-tab', data-file=file.name)
-                    img(src=file.iconURL, alt="Coding language icon", class="snippet-tab-file-icon")
-                    span(class='snippet-tab-name')= file.name
-    div(class='snippet-data')
-        each file in files
-            div(class=(file.name === slice.name) ? 'snippet-code-container' : 'snippet-code-container snippet-code-container--inactive', data-file=file.name)
-                table
-                    - lineNumber = 1;
-                    each line in file.content.split('\n')
-                        tr
-                            td(class='snippet-code-line-number')= lineNumber++
-                            td(class = 'snippet-code-line-data') 
-                                pre(class='code')= line
-    div(class='snippet-footer')
-        button(class='snippet-footer-action snippet-collapse-expand')= expanded ? 'Expand' : 'Collapse'
-        button(class='snippet-footer-action') View on GitHub
-script(src="https://stdigistdata001.blob.core.windows.net/general/snippet-script.js")
+                div(class=(file.filename === slice.file) ? 'snippet-code-container' : 'snippet-code-container snippet-code-container--inactive', data-file=file.filename)
+                    table
+                        - lineNumber = 1;
+                        each line in file.content.split('\n')
+                            tr
+                                td(class='snippet-code-line-number')= lineNumber++
+                                td(class = 'snippet-code-line-data')
+                                    pre
+                                        code=line
+        div(class='snippet-footer')
+            button(class='snippet-footer-action snippet-collapse-expand')= expanded ? 'Expand' : 'Collapse'
+            button(class='snippet-footer-action', onclick="window.location.href='" + url + "';") View on GitHub 
+    script(src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js")
+    script hljs.initHighlightingOnLoad();
+    script(src="https://stdigistdata001.blob.core.windows.net/general/snippet-script.js")

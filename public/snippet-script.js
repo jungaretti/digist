@@ -1,5 +1,4 @@
 function tabClickHandler(event) {
-
     //check if either the child of the tab or the tab was clicked
     let newFilename = (event.target.dataset.file === undefined) ?
         event.target.parentElement.dataset.file :

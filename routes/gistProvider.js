@@ -1,7 +1,9 @@
+const pug = require('pug');
 const express = require('express');
 
 const gist = require('../lib/gist');
 const fs = require('../lib/fileSlice');
+const ic = require('../lib/icon');
 
 const router = express.Router();
 
@@ -61,13 +63,20 @@ router.get('/gist/:gistId/', function(req, res) {
                 return;
             }
 
+            // Add the icon URL very optimistically.
+            Object.keys(files).forEach(function(key) {
+                files[key].icon = ic.map(files[key].language);
+            });
+
+            // Create the fileSlice.
             const userId = gistJson.owner.login;
             const url = composeGistUrl(userId, gistId);
             const fileSlice = new fs.fileSlice(file, start, stop);
 
             // Convert to html and respond.
-            const html = convertToHtmlPlaceHolder(url, fileSlice, files, theme);
-            res.send(html);
+            const html = convertToHTML(url, fileSlice, files);
+
+          res.send(html);
         }
     });
 });
@@ -85,13 +94,14 @@ function composeGistUrl(userId, gistId) {
     return 'https://gist.github.com/' + userId + '/' + gistId + '/';
 }
 
-function convertToHtmlPlaceHolder(url, fileSlice, files, theme) {
-    // If start and stop are = 0, do not use them. If they are non-zero, use them.
-    var display = 'url: ' + url + '<br>';
-    display += 'fileSlice: ' + fileSlice.file + ', ' + fileSlice.start + ', ' + fileSlice.stop + '<br>';
-    display += !!theme ? 'theme ' + theme + '<br>' : ''; // theme is optional 
-    display += 'files: ' + '<br>' + JSON.stringify(files, null, 4);
-    return display;
+function convertToHTML(url, slice, files) {
+    const compiledFunction = pug.compileFile('views/snippet.pug');
+    const compiledHTML = compiledFunction({
+        url: url,
+        slice: slice,
+        files: files,
+    });
+    return compiledHTML;
 }
 
 module.exports = router;
