@@ -87,7 +87,7 @@ function checkFileExists(file, gistInfo){
 
 function checkSliceInFile(file, gistInfo, start, stop){
     let totalLines = gistInfo[file]["content"].split("\n").length;
-    return ((totalLines > start) && (totalLines > stop));
+    return ((totalLines >= start) && (totalLines >= stop));
 }
 
 function composeGistUrl(userId, gistId) {
