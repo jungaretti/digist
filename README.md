@@ -4,22 +4,33 @@ Today's code snippets are ugly, static, and self-contained. Digist transforms yo
 
 ## Getting Started
 
-The Digist API requires three pieces of information: a Gist ID, a primary file, and a primary range.
+The Digist API requires three pieces of information: a GitHub Gist ID, a primary file, and a primary range. A Gist can contain multiple files. The "primary" file is the one that you want displayed by default. Let's digist the following Gist:
 
 ```
-// Let's embed https://gist.github.com/jungaretti/26b7cb6545cb1cb56d9dc8ac273ee4fc
+https://gist.github.com/jungaretti/26b7cb6545cb1cb56d9dc8ac273ee4fc
+```
 
-// The Gist ID is 26b7cb6545cb1cb56d9dc8ac273ee4fc
-// Let's pick main.ts and lines [4, 6] as the primary file and range
+First, we choose the parameters that will format the digist:
+- **Gist ID:** 26b7cb6545cb1cb56d9dc8ac273ee4fc
+- **Primary** file: thing.ts
+- **Slice:** 4:6
+- **Theme:** dark
 
-https://digist.azurewebsites.net/gist/26b7cb6545cb1cb56d9dc8ac273ee4fc?file=main.ts&slice=3:3
-``` 
+Which we can then use to compose the following API query:
+```
+https://digist.azurewebsites.net/gist/26b7cb6545cb1cb56d9dc8ac273ee4fc?file=Thing.ts&slice=4:6&theme=dark
+```
 
-### Vocabulary
+This is the result:
+![Sample digist](https://imgur.com/a/q4sXryP)
 
-- Gist: a set of files stored on GitHub's Gist service
-- Slice: a subsection of a Gist for a certain file (e.g., main.js:4:6)
-- Snippet: an embedded code viewer with two states: collapsed and expanded
+Beautiful! 😍
+
+## Vocabulary
+
+- **Gist:** a set of files stored on GitHub's Gist service.
+- **Slice:** a subsection of a Gist for a certain file (e.g., main.js:4:6).
+- **Snippet:** an embedded code viewer with two states: collapsed and expanded.
 
 ## Deployment
 
