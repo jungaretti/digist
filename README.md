@@ -6,9 +6,9 @@ Today's code snippets are ugly, static, and self-contained. Digist transforms yo
 
 ### Vocabulary
 
-- **Gist:** a set of files stored on GitHub's Gist service.
-- **Slice:** a subsection of a Gist for a certain file (e.g., main.js:4:6).
-- **Snippet:** an embedded code viewer with two states: collapsed and expanded.
+- **Gist:** a set of files stored on GitHub's Gist service
+- **Slice:** a subsection of a Gist for a certain file (e.g., main.js:4:6)
+- **Snippet:** an embedded code viewer with two states: collapsed and expanded
 
 ### Render a snippet
 
