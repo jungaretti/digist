@@ -12,7 +12,7 @@ https://gist.github.com/jungaretti/26b7cb6545cb1cb56d9dc8ac273ee4fc
 
 First, we choose the parameters that will format the digist:
 - **Gist ID:** 26b7cb6545cb1cb56d9dc8ac273ee4fc
-- **Primary file**: thing.ts
+- **Primary file**: Thing.ts
 - **Slice:** 4:6
 - **Theme:** dark
 
