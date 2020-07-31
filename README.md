@@ -4,34 +4,32 @@ Today's code snippets are ugly, static, and self-contained. Digist transforms yo
 
 ## Getting Started
 
-The Digist API requires three pieces of information: a GitHub Gist ID, a primary file, and a primary slice. A Gist can contain multiple files. The "primary" file is the one that you want displayed by default. Let's digist the following Gist:
-
-```
-https://gist.github.com/jungaretti/26b7cb6545cb1cb56d9dc8ac273ee4fc
-```
-
-First, we choose the parameters that will format the digist:
-- **Gist ID:** 26b7cb6545cb1cb56d9dc8ac273ee4fc
-- **Primary file**: Thing.ts
-- **Slice:** 4:6
-- **Theme:** dark
-
-Which we can then use to compose the following API query:
-```
-https://digist.azurewebsites.net/gist/26b7cb6545cb1cb56d9dc8ac273ee4fc?file=Thing.ts&slice=4:6&theme=dark
-```
-
-And this is the result:
-
-![Sample digist](https://i.imgur.com/utRwmXX.png)
-
-Beautiful! 😍
-
-## Vocabulary
+### Vocabulary
 
 - **Gist:** a set of files stored on GitHub's Gist service.
 - **Slice:** a subsection of a Gist for a certain file (e.g., main.js:4:6).
 - **Snippet:** an embedded code viewer with two states: collapsed and expanded.
+
+### Render a snippet
+
+`https://digist.azurewebsites.net/gist/{gist_id}?file={file}&slice={slice}&theme={theme}`
+
+| Name      | Description                                      |
+|-----------|--------------------------------------------------|
+| `gist_id` | Gist ID from GitHub |
+| `file`    | The default file shown by the snippet            |
+| `slice`   | The lines of `file` shown by the snippet, formatted as `{startLine}:{endLine}` |
+| `theme`   | Optional: either `dark` (default) or `light`     |
+
+Here's a sample request:
+
+`https://digist.azurewebsites.net/gist/26b7cb6545cb1cb56d9dc8ac273ee4fc?file=Thing.ts&slice=4:6&theme=dark`
+
+Here's the result:
+
+![Sample of rendered snippet](https://i.imgur.com/utRwmXX.png)
+
+Beautiful! 😍
 
 ## Deployment
 
