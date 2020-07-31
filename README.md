@@ -21,8 +21,9 @@ Which we can then use to compose the following API query:
 https://digist.azurewebsites.net/gist/26b7cb6545cb1cb56d9dc8ac273ee4fc?file=Thing.ts&slice=4:6&theme=dark
 ```
 
-This is the result:
-![Sample digist](https://imgur.com/a/q4sXryP)
+And this is the result:
+
+![Sample digist](https://i.imgur.com/utRwmXX.png)
 
 Beautiful! 😍
 
