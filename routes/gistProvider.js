@@ -75,7 +75,7 @@ router.get('/gist/:gistId/', function(req, res) {
             const fileSlice = new fs.fileSlice(file, start, stop);
 
             // Convert to html and respond.
-            const html = convertToHTML(url, fileSlice, files, theme);
+            const html = convertToHTMLPage(url, fileSlice, files, theme);
             res.send(html);
         }
     });
@@ -94,8 +94,8 @@ function composeGistUrl(userId, gistId) {
     return 'https://gist.github.com/' + userId + '/' + gistId + '/';
 }
 
-function convertToHTML(url, slice, files, theme) {
-    const compiledFunction = pug.compileFile('views/snippet.pug');
+function convertToHTMLPage(url, slice, files, theme) {
+    const compiledFunction = pug.compileFile('views/snippet-page.pug');
     const compiledHTML = compiledFunction({
         url: url,
         slice: slice,

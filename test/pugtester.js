@@ -1,7 +1,7 @@
 const pug = require('pug');
 
 // Compile the source code
-const compiledFunction = pug.compileFile('views/snippet.pug');
+const compiledFunction = pug.compileFile('views/snippet-page.pug');
 
 // Render a set of data
 console.log(compiledFunction({
