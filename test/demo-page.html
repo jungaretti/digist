@@ -1,12 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pugtest Output</title>
-</head>
-
-<body>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/vs2015.min.css"/><link rel="stylesheet" href="../public/snippet-style.css"/><div class="snippet"><div class="snippet-header"><div class="snippet-tab-container"><button class="snippet-tab snippet-tab--active" data-file="hello_world.rb"><img class="snippet-tab-file-icon" src="https://raw.githubusercontent.com/jesseweed/seti-ui/master/icons/ruby.svg" alt="Coding language icon"/><span class="snippet-tab-name">hello_world.rb</span></button><button class="snippet-tab" data-file="hello_world.py"><img class="snippet-tab-file-icon" src="https://raw.githubusercontent.com/jesseweed/seti-ui/master/icons/ruby.svg" alt="Coding language icon"/><span class="snippet-tab-name">hello_world.py</span></button></div></div><div class="snippet-data"><div class="snippet-code-container" data-file="hello_world.rb"><table><tr><td class="snippet-code-line-number">1</td><td class="snippet-code-line-data"><pre><code>class HelloWorld</code></pre></td></tr><tr><td class="snippet-code-line-number">2</td><td class="snippet-code-line-data"><pre><code>   def initialize(name)</code></pre></td></tr><tr><td class="snippet-code-line-number">3</td><td class="snippet-code-line-data"><pre><code>      @name = name.capitalize</code></pre></td></tr><tr><td class="snippet-code-line-number">4</td><td class="snippet-code-line-data"><pre><code>   end</code></pre></td></tr><tr><td class="snippet-code-line-number">5</td><td class="snippet-code-line-data"><pre><code>   def sayHi</code></pre></td></tr><tr><td class="snippet-code-line-number">6</td><td class="snippet-code-line-data"><pre><code>      puts &quot;Hello !&quot;</code></pre></td></tr><tr><td class="snippet-code-line-number">7</td><td class="snippet-code-line-data"><pre><code>   end</code></pre></td></tr><tr><td class="snippet-code-line-number">8</td><td class="snippet-code-line-data"><pre><code>end</code></pre></td></tr><tr><td class="snippet-code-line-number">9</td><td class="snippet-code-line-data"><pre><code></code></pre></td></tr><tr><td class="snippet-code-line-number">10</td><td class="snippet-code-line-data"><pre><code>hello = HelloWorld.new(&quot;World&quot;)</code></pre></td></tr><tr><td class="snippet-code-line-number">11</td><td class="snippet-code-line-data"><pre><code>hello.sayHi</code></pre></td></tr></table></div><div class="snippet-code-container snippet-code-container--inactive" data-file="hello_world.py"><table><tr><td class="snippet-code-line-number">1</td><td class="snippet-code-line-data"><pre><code>class HelloWorld:</code></pre></td></tr><tr><td class="snippet-code-line-number">2</td><td class="snippet-code-line-data"><pre><code></code></pre></td></tr><tr><td class="snippet-code-line-number">3</td><td class="snippet-code-line-data"><pre><code>    def __init__(self, name):</code></pre></td></tr><tr><td class="snippet-code-line-number">4</td><td class="snippet-code-line-data"><pre><code>        self.name = name.capitalize()</code></pre></td></tr><tr><td class="snippet-code-line-number">5</td><td class="snippet-code-line-data"><pre><code>       </code></pre></td></tr><tr><td class="snippet-code-line-number">6</td><td class="snippet-code-line-data"><pre><code>    def sayHi(self):</code></pre></td></tr><tr><td class="snippet-code-line-number">7</td><td class="snippet-code-line-data"><pre><code>        print &quot;Hello &quot; + self.name + &quot;!&quot;</code></pre></td></tr><tr><td class="snippet-code-line-number">8</td><td class="snippet-code-line-data"><pre><code></code></pre></td></tr><tr><td class="snippet-code-line-number">9</td><td class="snippet-code-line-data"><pre><code>hello = HelloWorld(&quot;world&quot;)</code></pre></td></tr><tr><td class="snippet-code-line-number">10</td><td class="snippet-code-line-data"><pre><code>hello.sayHi()</code></pre></td></tr></table></div></div><div class="snippet-footer"><button class="snippet-footer-action snippet-collapse-expand">Collapse</button><button class="snippet-footer-action" onclick="window.location.href='https://www.github.com';">View on GitHub </button></div></div><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://stdigistdata001.blob.core.windows.net/general/snippet-script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digist Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/vs2015.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../public/snippet-style.css"
+    />
+  </head>
+  <body>
+    <div class="snippet snippet--dark">
+      <div class="snippet-header">
+        <div class="snippet-tab-container">
+          <button
+            class="snippet-tab snippet-tab--active"
+            data-file="hello_world.rb"
+          >
+            <img
+              class="snippet-tab-file-icon"
+              src="https://raw.githubusercontent.com/jesseweed/seti-ui/master/icons/ruby.svg"
+              onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/jesseweed/seti-ui/master/icons/html.svg'"
+              alt="Coding language icon"
+            /><span class="snippet-tab-name">hello_world.rb</span></button
+          ><button class="snippet-tab" data-file="hello_world.py">
+            <img
+              class="snippet-tab-file-icon"
+              src="https://raw.githubusercontent.com/jesseweed/seti-ui/master/icons/ruby.svg"
+              onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/jesseweed/seti-ui/master/icons/html.svg'"
+              alt="Coding language icon"
+            /><span class="snippet-tab-name">hello_world.py</span>
+          </button>
+        </div>
+      </div>
+      <div class="snippet-data">
+        <div class="snippet-code-container" data-file="hello_world.rb">
+          <table>
+            <tr>
+              <td class="snippet-code-line-number">1</td>
+              <td class="snippet-code-line-data">
+                <pre><code>class HelloWorld</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">2</td>
+              <td class="snippet-code-line-data">
+                <pre><code>   def initialize(name)</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">3</td>
+              <td class="snippet-code-line-data">
+                <pre><code>      @name = name.capitalize</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">4</td>
+              <td class="snippet-code-line-data">
+                <pre><code>   end</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">5</td>
+              <td class="snippet-code-line-data">
+                <pre><code>   def sayHi</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">6</td>
+              <td class="snippet-code-line-data">
+                <pre><code>      puts &quot;Hello !&quot;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">7</td>
+              <td class="snippet-code-line-data">
+                <pre><code>   end</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">8</td>
+              <td class="snippet-code-line-data">
+                <pre><code>end</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">9</td>
+              <td class="snippet-code-line-data">
+                <pre><code></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">10</td>
+              <td class="snippet-code-line-data">
+                <pre><code>hello = HelloWorld.new(&quot;World&quot;)</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">11</td>
+              <td class="snippet-code-line-data">
+                <pre><code>hello.sayHi</code></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div
+          class="snippet-code-container snippet-code-container--inactive"
+          data-file="hello_world.py"
+        >
+          <table>
+            <tr>
+              <td class="snippet-code-line-number">1</td>
+              <td class="snippet-code-line-data">
+                <pre><code>class HelloWorld:</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">2</td>
+              <td class="snippet-code-line-data">
+                <pre><code></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">3</td>
+              <td class="snippet-code-line-data">
+                <pre><code>    def __init__(self, name):</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">4</td>
+              <td class="snippet-code-line-data">
+                <pre><code>        self.name = name.capitalize()</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">5</td>
+              <td class="snippet-code-line-data">
+                <pre><code>       </code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">6</td>
+              <td class="snippet-code-line-data">
+                <pre><code>    def sayHi(self):</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">7</td>
+              <td class="snippet-code-line-data">
+                <pre><code>        print &quot;Hello &quot; + self.name + &quot;!&quot;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">8</td>
+              <td class="snippet-code-line-data">
+                <pre><code></code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">9</td>
+              <td class="snippet-code-line-data">
+                <pre><code>hello = HelloWorld(&quot;world&quot;)</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="snippet-code-line-number">10</td>
+              <td class="snippet-code-line-data">
+                <pre><code>hello.sayHi()</code></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="snippet-footer">
+        <button class="snippet-footer-action snippet-collapse-expand">
+          Collapse</button
+        ><button
+          class="snippet-footer-action"
+          onclick="window.location.href='https://www.github.com';"
+        >
+          View on GitHub
+        </button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://stdigistdata001.blob.core.windows.net/general/snippet-script.js"></script>
+  </body>
 </html>
