@@ -1,0 +1,108 @@
+:root {
+  --meta-background: #007acc;
+  --meta-background-selected: #1f8ad2;
+  --meta-foreground: #ffffff;
+  --editor-selectionHighlightBackground: #add6ff26;
+  /* Dark mode */
+  --editor-background--dark: #1e1e1e;
+  --editor-foreground--dark: #d4d4d4;
+  --tab-background-color--dark: #252526;
+  --tab-inactive-color--dark: #2d2d2d;
+  /* Light mode */
+  --editor-background--light: #ffffff;
+  --editor-foreground--light: #000000;
+  --tab-background-color--light: #ffffff;
+  --tab-inactive-color--light: #ececec;
+}
+pre,
+.hljs {
+  margin: 0px;
+  padding: 0px;
+}
+.snippet-tab,
+.snippet-footer-action {
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+}
+.snippet {
+  font-size: 1.2rem;
+}
+.snippet--dark {
+  background-color: var(--editor-background--dark);
+  color: var(--editor-foreground--dark);
+}
+.snippet--light {
+  background-color: var(--editor-background--light);
+  color: var(--editor-foreground--light);
+}
+.snippet-header--collapsed {
+  display: none;
+}
+.snippet--dark .snippet-header {
+  background-color: var(--tab-background-color--dark);
+}
+.snippet--light .snippet-header {
+  background-color: var(--tab-background-color--light);
+}
+.snippet-tab {
+  padding: 8px 16px 8px 10px;
+}
+.snippet--dark .snippet-tab {
+  background: var(--tab-inactive-color--dark);
+  color: var(--editor-foreground--dark);
+}
+.snippet--light .snippet-tab {
+  background: var(--tab-inactive-color--light);
+  color: var(--editor-foreground--light);
+}
+.snippet-tab--active {
+  font-weight: bolder;
+}
+.snippet--dark .snippet-tab--active {
+  background: var(--editor-background--dark);
+}
+.snippet--light .snippet-tab--active {
+  background: var(--editor-background--light);
+}
+.snippet-tab-file-icon {
+  width: 30px;
+  height: auto;
+  vertical-align: middle;
+}
+.snippet-data {
+  padding: 10px 20px;
+}
+.snippet-code-container {
+  font-family: monospace;
+}
+.snippet-code-container--inactive {
+  display: none;
+}
+.snippet-code-line-number {
+  padding-right: 20px;
+}
+.snippet--dark .snippet-code-line-number {
+  color: var(--editor-foreground--dark);
+}
+.snippet--light .snippet-code-line-number {
+  color: var(--editor-foreground--light);
+}
+.snippet-line-number--collapsed {
+  display: none;
+}
+.snippet-footer {
+  background-color: var(--meta-background);
+  color: var(--meta-foreground);
+  display: flex;
+  justify-content: space-between;
+}
+.snippet-footer-action {
+  text-decoration: none;
+  background-color: var(--meta-background);
+  color: inherit;
+  padding: 2px 10px;
+}
+.snippet-footer-action:hover {
+  background-color: var(--meta-background-selected);
+}
