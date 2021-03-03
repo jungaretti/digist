@@ -10,20 +10,33 @@ Today's code snippets are ugly, static, and self-contained. Digist transforms yo
 - **Slice:** a subsection of a Gist for a certain file (e.g., main.js:4:6)
 - **Snippet:** an embedded code viewer with two states: collapsed and expanded
 
-### Render a snippet
+### Installation
 
-`https://digist.azurewebsites.net/gist/{gist_id}?file={file}&slice={slice}&theme={theme}`
+Installing Digist is a walk in the park. Just clone this repo, install its dependencies with npm, and start the Express server.
 
-| Name      | Description                                      |
-|-----------|--------------------------------------------------|
-| `gist_id` | Gist ID from GitHub |
-| `file`    | The default file shown by the snippet            |
+```shell
+npm install
+
+# Start Express server on port 3000
+npm start
+```
+
+## Usage
+
+### Render a Snippet
+
+`https://localhost:3000/gist/{gist_id}?file={file}&slice={slice}&theme={theme}`
+
+| Name      | Description                                                                    |
+| --------- | ------------------------------------------------------------------------------ |
+| `gist_id` | Gist ID from GitHub                                                            |
+| `file`    | The default file shown by the snippet                                          |
 | `slice`   | The lines of `file` shown by the snippet, formatted as `{startLine}:{endLine}` |
-| `theme`   | Optional: either `dark` (default) or `light`     |
+| `theme`   | Optional: either `dark` (default) or `light`                                   |
 
 Here's a sample request:
 
-`https://digist.azurewebsites.net/gist/26b7cb6545cb1cb56d9dc8ac273ee4fc?file=Thing.ts&slice=4:6&theme=dark`
+`https://localhost:3000/gist/26b7cb6545cb1cb56d9dc8ac273ee4fc?file=Thing.ts&slice=4:6&theme=dark`
 
 Here's the result:
 
