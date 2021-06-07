@@ -43,7 +43,3 @@ Here's the result:
 ![Sample of rendered snippet](https://i.imgur.com/utRwmXX.png)
 
 Beautiful! 😍
-
-## Deployment
-
-Digist is deployed using [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) at [digist.azurewebapp.net](https://digist.azurewebsites.net/). For more information, refer to [this guide](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs).
