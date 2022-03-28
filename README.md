@@ -36,7 +36,7 @@ npm start
 
 Here's a sample request:
 
-`localhost:3000/gist/26b7cb6545cb1cb56d9dc8ac273ee4fc?file=Thing.ts&slice=4:6&theme=dark`
+`localhost:3000/gist/26b7cb6545cb1cb56d9dc8ac273ee4fc?file=Person.ts&slice=4:6&theme=dark`
 
 Here's the result:
 
